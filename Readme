@@ -6,11 +6,12 @@ I added quite a few things.
 
 1. Now uses rack-fiber_pool, em_mysql2, em-resolv-replace, em-synchrony, and em-http-request for async requests.
 2. ActiveRecord is included via sinatra-activerecord
-2. Simple localization with i18n.
-3. Added bundler and rvm support.
-4. Added less support.
-5. Dalli for speedy memcache support.
-6. Tux is included for console debugging.
+3. Simple localization with i18n.
+4. Added bundler and rvm support.
+5. Added less support.
+6. Dalli for speedy memcache support.
+7. Tux is included for console debugging.
+8. Convenient hashing functions for sha1, sha2 and md5.
 
 To start the server:
 
@@ -25,3 +26,5 @@ rake test
 To launch a console:
 
 rake console
+
+If you want to see an application that used this setup as a base, you should check out em-shorty at http://github.com/zquestz/em-shorty.
