@@ -1,0 +1,5 @@
+en:
+  app_name: fp-sin
+  source_url: http://github.com/zquestz/fp-sin
+  http_not_found: 404 - Page Not Found
+  http_error: 500 - An Error Has Occurred

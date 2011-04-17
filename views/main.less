@@ -1,0 +1,78 @@
+/* ###################################### */
+/* Setup a few vars.                      */
+/* ###################################### */
+@theme-color: #E31A19;
+@highlight-color: #E38F19;
+@notice-background-color: #DDD;
+@notice-color: green;
+@error-background-color: #DDD;
+@error-color: red;
+@link-color: #ED771A;
+@background-color: white;
+@text-color: black;
+
+body {
+  background-color: @background-color;
+  color: @text-color;
+
+  div#content {
+    margin: auto;
+    width: 400px;
+    text-align:center;
+        
+    a {
+      :link {
+        text-decoration: none;
+        color: @link-color;
+      }
+      
+      :visited {
+        color: @link-color;
+      }
+      
+      :hover { 
+        color: @highlight-color;
+      }
+      
+      :active {
+        color: @highlight-color;
+      }
+    }
+    
+    #header {
+      padding-bottom: 10px;
+    }
+    
+    #footer {
+      color: @theme-color;
+      padding-top: 12px;
+      clear: both;
+    }
+
+    div#error {
+      background-color: @error-background-color;
+      color: @error-color;
+    }
+
+    div#notice {
+      background-color: @notice-background-color;
+      color: @notice-color;
+    }
+    
+    div.flash {
+      margin-bottom: 5px;
+      padding: 5px 10px;
+    }
+        
+    div.overflow {
+      overflow: hidden;
+    }
+
+    .rounded {
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -khtml-border-radius: 5px;
+      border-radius: 5px;
+    }    
+  }
+}

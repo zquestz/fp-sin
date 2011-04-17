@@ -1,0 +1,27 @@
+fp-sin 0.1.0
+
+Simple Sinatra shell with all the goodies.
+
+I added quite a few things.
+
+1. Now uses rack-fiber_pool, em_mysql2, em-resolv-replace, em-synchrony, and em-http-request for async requests.
+2. ActiveRecord is included via sinatra-activerecord
+2. Simple localization with i18n.
+3. Added bundler and rvm support.
+4. Added less support.
+5. Dalli for speedy memcache support.
+6. Tux is included for console debugging.
+
+To start the server:
+
+thin -R config.ru start
+
+This will fire it up on port 3000.
+
+To run the tests:
+
+rake test
+
+To launch a console:
+
+rake console

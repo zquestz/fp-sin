@@ -1,0 +1,11 @@
+!!!
+%html
+  %head
+    %title= t('app_name')
+    %link(rel="stylesheet" type="text/css" href="/main.css")
+    %link(rel="icon" type="image/png" href="/favicon.png")
+  %body
+    %div(id="content")
+      %div(id="header")= haml :header
+      %div(id="partial")= yield
+      %div(id="footer")= haml :footer
