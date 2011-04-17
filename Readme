@@ -4,7 +4,7 @@ Simple Sinatra shell with all the goodies.
 
 I added quite a few things.
 
-1. Now uses rack-fiber_pool, em_mysql2, em-resolv-replace, em-synchrony, and em-http-request for async requests.
+1. Uses rack-fiber_pool, em_mysql2, em-resolv-replace, em-synchrony, and em-http-request for async requests.
 2. ActiveRecord is included via sinatra-activerecord
 3. Simple localization with i18n.
 4. Added bundler and rvm support.
