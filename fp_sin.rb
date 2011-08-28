@@ -29,7 +29,7 @@ require 'em-synchrony/em-http'
 class FpSinApp < Sinatra::Base
   set :root, File.dirname(__FILE__)
   set :locales, File.join(File.dirname(__FILE__), 'config', 'en.yml')
-  set :memcached, 'localhost:11211'
+  set :memcached, '127.0.0.1:11211'
   set :sockets, ['/opt/local/var/run/mysql5/mysqld.sock', 
                   '/var/run/mysqld/mysqld.sock', 
                   '/tmp/mysql.sock']
