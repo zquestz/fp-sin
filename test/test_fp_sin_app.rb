@@ -31,13 +31,4 @@ class TestFpSinApp < Test::Unit::TestCase
     assert_equal 404, last_response.status
     assert last_response.body.include?(I18n.translate('http_not_found'))
   end
-  
-  def test_memcached
-    test_app = FpSinApp.new
-    default_caching = test_app.settings.caching
-    test_app.settings.caching = true
-    assert_equal test_app.settings.cache.class, Dalli::Client
-    test_app.settings.caching = default_caching
-  end
-  
 end

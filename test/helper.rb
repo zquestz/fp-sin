@@ -13,6 +13,3 @@ end
 require 'fp_sin'
 require 'test/unit'
 require 'rack/test'
-
-# Cleanup data sources
-FpSinApp.new.flush_cache
