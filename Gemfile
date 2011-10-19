@@ -1,5 +1,6 @@
 source :rubygems
 
+gem 'rake', '0.8.7'
 gem 'thin'
 gem 'sinatra'
 gem 'activerecord'
@@ -15,6 +16,6 @@ gem 'haml'
 gem 'less'
 gem 'rack-test'
 gem 'simplecov', '>= 0.4.0', :require => false, :group => :test
-gem 'em-synchrony'
+gem 'em-synchrony', :git => 'git://github.com/igrigorik/em-synchrony.git'
 gem 'em-http-request'
 gem 'tux'

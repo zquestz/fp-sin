@@ -15,16 +15,16 @@ I added quite a few things.
 
 To start the server:
 
-thin -R config.ru start
+bundle exec thin -R config.ru start
 
 This will fire it up on port 3000.
 
 To run the tests:
 
-rake test
+bundle exec rake test
 
 To launch a console:
 
-rake console
+bundle exec rake console
 
 If you want to see an application that used this setup as a base, you should check out em-shorty at http://github.com/zquestz/em-shorty.
