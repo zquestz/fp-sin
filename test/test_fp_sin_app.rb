@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestFpSinApp < Test::Unit::TestCase
+class TestFpSinApp < Minitest::Test
   include Rack::Test::Methods
 
   def app
