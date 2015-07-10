@@ -13,7 +13,6 @@ $LOAD_PATH << File.join(File.dirname(__FILE__), 'lib')
 # Require needed libs
 require 'fiber'
 require 'rack/fiber_pool'
-require 'mysql2/em'
 require 'sinatra'
 require 'tilt/haml'
 require 'tilt/less'
