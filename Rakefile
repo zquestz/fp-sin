@@ -19,7 +19,7 @@ end
 
 namespace :db do
   task :load_config do
-    require "./fp_sin"
+    require "fp_sin"
   end
 end
 
