@@ -5,7 +5,7 @@ development:
   pool: 100
   username: root
   password: root
-  socket: '/opt/local/var/run/mysql5/mysqld.sock'
+  socket: /opt/local/var/run/percona/mysqld.sock
 production:
   adapter: em_mysql2
   host: 127.0.0.1
