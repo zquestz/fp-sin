@@ -1,4 +1,4 @@
-fp-sin 0.2.0
+## fp-sin 0.2.0
 
 Simple Sinatra shell with all the goodies.
 
@@ -15,16 +15,22 @@ I added quite a few things.
 
 To start the server:
 
+```console
 bundle exec thin -R config.ru start
+```
 
 This will fire it up on port 3000.
 
 To run the tests:
 
+```console
 bundle exec rake test
+```
 
 To launch a console:
 
+```console
 bundle exec rake console
+```
 
 If you want to see an application that used this setup as a base, you should check out em-shorty at http://github.com/zquestz/em-shorty.
