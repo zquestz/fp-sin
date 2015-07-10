@@ -11,5 +11,6 @@ end
 
 # require items needed for testing
 require 'fp_sin'
-require 'test/unit'
 require 'rack/test'
+require 'minitest'
+require 'minitest/autorun'

@@ -15,7 +15,7 @@ production:
   username: root
   password: root
   socket: true
-  
+
 test:
   adapter: sqlite3
   database: db/test.sqlite3

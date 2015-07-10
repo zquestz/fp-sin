@@ -1,5 +1,5 @@
-# fp-sin 0.1.0
-# By: Josh Ellithorpe April 2011
+# fp-sin 0.2.0
+# By: Josh Ellithorpe April 2011-2015
 # Simple Sinatra shell with all the goodies.
 # thin -R config.ru start
 # http://localhost:3000/
@@ -15,6 +15,8 @@ require 'fiber'
 require 'rack/fiber_pool'
 require 'mysql2/em'
 require 'sinatra'
+require 'tilt/haml'
+require 'tilt/less'
 require 'sinatra/activerecord'
 require 'sinatra/i18n'
 require 'less'
@@ -46,7 +48,6 @@ class FpSinApp < Sinatra::Base
     db_config = YAML.load_file(File.join('config', 'database.yml'))[settings.environment.to_s]
     db_config.merge!({'socket' => settings.sockets.find { |f| File.exist? f } }) if db_config['socket']
     ActiveRecord::Base.establish_connection(db_config)
-    ActiveRecord::Base.logger.level = Logger::INFO
   end
       
   get '/' do

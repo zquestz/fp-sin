@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestHashify < Test::Unit::TestCase
+class TestHashify < Minitest::Test
   
   @@matchers = ['hi', ['hi'], [:hi], {'hi' => 'hi'}, {:hi => 'hi'}, {'hi' => :hi}]
 
@@ -79,5 +79,4 @@ class TestHashify < Test::Unit::TestCase
       assert_nil matcher.hashify(:error)
     end
   end
-  
 end
