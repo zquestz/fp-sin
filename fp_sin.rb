@@ -27,6 +27,7 @@ require 'mime/types'
 require 'dalli'
 require 'hashify'
 require 'em-synchrony/em-http'
+require "em-synchrony/mysql2"
 require 'em-synchrony/activerecord'
 
 # Main application class.
