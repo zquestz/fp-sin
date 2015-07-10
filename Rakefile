@@ -17,4 +17,10 @@ task :console do
   exec "tux"
 end
 
+namespace :db do
+  task :load_config do
+    require "./fp_sin"
+  end
+end
+
 task :default => :test

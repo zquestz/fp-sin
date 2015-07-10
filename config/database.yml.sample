@@ -5,17 +5,17 @@ development:
   pool: 100
   username: root
   password: root
-  socket: true
-
+  socket: '/opt/local/var/run/mysql5/mysqld.sock'
 production:
   adapter: em_mysql2
+  host: 127.0.0.1
+  port: 3306
   database: fp_sin
   encoding: utf8
   pool: 100
   username: root
   password: root
   socket: true
-
 test:
   adapter: sqlite3
   database: db/test.sqlite3

@@ -8,21 +8,21 @@ GIT
 GEM
   remote: http://rubygems.org/
   specs:
-    activemodel (4.2.3)
-      activesupport (= 4.2.3)
+    activemodel (4.1.10)
+      activesupport (= 4.1.10)
       builder (~> 3.1)
-    activerecord (4.2.3)
-      activemodel (= 4.2.3)
-      activesupport (= 4.2.3)
-      arel (~> 6.0)
-    activesupport (4.2.3)
-      i18n (~> 0.7)
+    activerecord (4.1.10)
+      activemodel (= 4.1.10)
+      activesupport (= 4.1.10)
+      arel (~> 5.0.0)
+    activesupport (4.1.10)
+      i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
-      thread_safe (~> 0.3, >= 0.3.4)
+      thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.8)
-    arel (6.0.0)
+    arel (5.0.1.20140414130214)
     bond (0.5.1)
     builder (3.2.2)
     commonjs (0.2.7)
@@ -102,7 +102,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord
+  activerecord (= 4.1.10)
   dalli
   em-http-request
   em-resolv-replace

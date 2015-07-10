@@ -33,22 +33,15 @@ class FpSinApp < Sinatra::Base
   set :root, File.dirname(__FILE__)
   set :locales, File.join(File.dirname(__FILE__), 'config', 'en.yml')
   set :memcached, '127.0.0.1:11211'
-  set :sockets, ['/opt/local/var/run/mysql5/mysqld.sock', 
-                  '/var/run/mysqld/mysqld.sock', 
-                  '/tmp/mysql.sock']
   set :caching, true
   set :cache_timeout, 120
+  set :database_file, File.join('config', 'database.yml')
   set :cache, settings.caching ? Dalli::Client.new(settings.memcached, {:namespace => 'fps_', :expires_in => settings.cache_timeout}) : CacheProxy.new()
   
   use Rack::FiberPool, :size => 100 unless test?
 
   register Sinatra::I18n
-  
-  configure do
-    db_config = YAML.load_file(File.join('config', 'database.yml'))[settings.environment.to_s]
-    db_config.merge!({'socket' => settings.sockets.find { |f| File.exist? f } }) if db_config['socket']
-    ActiveRecord::Base.establish_connection(db_config)
-  end
+  register Sinatra::ActiveRecordExtension
       
   get '/' do
     cache_control :public, :must_revalidate, :max_age => (settings.cache_timeout * 10)
