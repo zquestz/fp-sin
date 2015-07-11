@@ -1,0 +1,28 @@
+#sinatra_authentication
+  %h1.page_title Users
+  %table
+    %tr
+      %th Email
+      - if current_user.admin?
+        %th Permission Level
+      %th Options
+    - @users.each do |user|
+      %tr
+        %td
+          - if user.email
+            = user.email
+          - elsif user.fb_uid
+            <fb:name uid=#{user.fb_uid} />
+          - else
+            "user #{user.id}"
+        - if current_user.admin?
+          %td= user.permission_level
+        %td
+          %a{:href => "/users/#{user.id}"} Show
+        - if current_user.admin?
+          %td
+            %a{:href => "/users/#{user.id}/edit"} Edit
+          %td
+            -# this doesn't work for tk
+            - if !user.site_admin?
+              %a{:href => "/users/#{user.id}/delete", :onclick => "return confirm('you sure?')"} Delete

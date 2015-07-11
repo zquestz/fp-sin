@@ -1,9 +1,10 @@
 %a(href="/")
   %img(src="/images/logo.png" alt="#{t('app_name')}" border="0")
-- if @flash
-  - if @flash[:error]
+- if flash
+  - if flash[:error]
     %div(id="error" class="flash rounded")
-      %div(class="overflow")= @flash[:error]
-  - if @flash[:notice]
+      %div(class="overflow")= flash[:error]
+  - if flash[:notice]
     %div(id="notice" class="flash rounded")
-      %div(class="overflow")= @flash[:notice]
+      %div(class="overflow")= flash[:notice]
+  =render_login_logout

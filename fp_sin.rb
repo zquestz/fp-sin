@@ -13,7 +13,9 @@ $LOAD_PATH << File.join(File.dirname(__FILE__), 'lib')
 # Require needed libs
 require 'fiber'
 require 'rack/fiber_pool'
+require 'rack/session/cookie'
 require 'sinatra'
+require 'sinatra/flash'
 require 'tilt/haml'
 require 'tilt/less'
 require 'sinatra/activerecord'
@@ -26,8 +28,8 @@ require 'mime/types'
 require 'dalli'
 require 'hashify'
 require 'em-synchrony/em-http'
-require "em-synchrony/mysql2"
 require 'em-synchrony/activerecord'
+require 'sinatra-authentication'
 
 # Main application class.
 class FpSinApp < Sinatra::Base
@@ -38,14 +40,23 @@ class FpSinApp < Sinatra::Base
   set :cache_timeout, 120
   set :database_file, File.join('config', 'database.yml')
   set :cache, settings.caching ? Dalli::Client.new(settings.memcached, {:namespace => 'fps_', :expires_in => settings.cache_timeout}) : CacheProxy.new()
-  
+
   use Rack::FiberPool, :size => 100 unless test?
+  use Rack::Session::Cookie, :key => 'rack.session',
+                           #:domain => 'foo.com',
+                           :path => '/',
+                           :expire_after => 2592000,
+                           :secret => 'sdklfjklasdjfiowij547io45u9jslifj93',
+                           :old_secret => '3948309257384719814543645767'
 
   register Sinatra::I18n
   register Sinatra::ActiveRecordExtension
-      
+  register Sinatra::Flash
+  register Sinatra::SinatraAuthentication
+
+  set :sinatra_authentication_view_path, "#{File.join(Pathname(__FILE__).dirname.expand_path, "views", "auth")}"
+
   get '/' do
-    cache_control :public, :must_revalidate, :max_age => (settings.cache_timeout * 10)
     haml :index
   end
   
@@ -57,13 +68,13 @@ class FpSinApp < Sinatra::Base
     
   # Page not found handler
   not_found do
-    @flash = {:error => t('http_not_found')}
+    flash.now[:error] = t('http_not_found')
     haml :index
   end
 
   # Error handler
   error do
-    @flash = {:error => t('http_error')}
+    flash.now[:error] = t('http_error')
     haml :index
   end
   

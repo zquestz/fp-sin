@@ -1,0 +1,10 @@
+#sinatra_authentication
+  %h1.page_title
+    - if @user.email
+      = @user.email
+    - elsif @user.fb_uid
+      <fb:name uid=#{@user.fb_uid} linked='false' />
+  %p Joined: #{@user.created_at}
+  %p Admin: #{@user.admin?.to_s.upcase}
+  - if current_user.admin?
+    %p Permission Level: #{@user.permission_level}
