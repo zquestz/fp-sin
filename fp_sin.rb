@@ -37,6 +37,8 @@ class FpSinApp < Sinatra::Base
 
   set :sinatra_authentication_view_path, "#{File.join(Pathname(__FILE__).dirname.expand_path, "views", "auth")}"
 
+  helpers ApplicationHelper
+
   get '/' do
     haml :index
   end
