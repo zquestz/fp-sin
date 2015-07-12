@@ -5,13 +5,14 @@ Simple Sinatra shell with all the goodies.
 I added quite a few things.
 
 1. Uses rack-fiber_pool, em_mysql2, em-resolv-replace, em-synchrony, and em-http-request for async requests.
-2. ActiveRecord is included via sinatra-activerecord
-3. Simple localization with i18n.
-4. Added bundler and rvm support.
-5. Added less support.
-6. Dalli for speedy memcache support.
-7. Tux is included for console debugging.
-8. Convenient hashing functions for sha1, sha2 and md5.
+2. ActiveRecord is included via sinatra-activerecord.
+3. Basic login system included via sinatra-authentication.
+4. Simple localization with i18n.
+5. Added bundler and rvm support.
+6. Added less support.
+7. Dalli for speedy memcache support.
+8. Tux is included for console debugging.
+9. Convenient hashing functions for sha1, sha2 and md5.
 
 To start the server:
 
