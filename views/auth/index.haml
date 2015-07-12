@@ -21,5 +21,5 @@
           %a{:href => "/users/#{user.id}"} #{t('show')}
           - if current_user.admin?
             %a{:href => "/users/#{user.id}/edit"} - #{t('edit')}
-            - if !user.site_admin?
+            - if !user.site_admin? && user.id != current_user.id
               %a{:href => "/users/#{user.id}/delete", :onclick => "return confirm('you sure?')"} - #{t('delete')}
