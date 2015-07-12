@@ -1,5 +1,5 @@
 # fp-sin 0.2.0
-# By: Josh Ellithorpe April 2011-2015
+# By: Josh Ellithorpe 2011-2015
 # Simple Sinatra shell with all the goodies.
 # thin -R config.ru start
 # http://localhost:3000/

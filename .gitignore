@@ -1,6 +1,6 @@
 .DS_Store
 cache/**/*
-.sass_cache/**/*
+.sass-cache/**/*
 config/database.yml
 coverage/**/*
 db/test.sqlite3
