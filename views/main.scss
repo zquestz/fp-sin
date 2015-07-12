@@ -1,74 +1,74 @@
 /* ###################################### */
 /* Setup a few vars.                      */
 /* ###################################### */
-@theme-color: #E31A19;
-@highlight-color: #E38F19;
-@input-border-color: #DDD;
-@input-color: #555;
-@notice-background-color: #DDD;
-@notice-color: green;
-@error-background-color: #DDD;
-@error-color: red;
-@link-color: #ED771A;
-@background-color: white;
-@text-color: black;
-@table-border-color: #DDD;
+$theme-color: #E31A19;
+$highlight-color: #E38F19;
+$input-border-color: #DDD;
+$input-color: #555;
+$notice-background-color: #DDD;
+$notice-color: green;
+$error-background-color: #DDD;
+$error-color: red;
+$link-color: #ED771A;
+$background-color: white;
+$text-color: black;
+$table-border-color: #DDD;
 
 * {
   font-family: 'Open Sans', sans-serif;
 }
 
 body {
-  background-color: @background-color;
-  color: @text-color;
+  background-color: $background-color;
+  color: $text-color;
 
   div#content {
     margin: auto;
     width: 500px;
     text-align: center;
-        
+
     a:link {
       text-decoration: none;
-      color: @link-color;
+      color: $link-color;
     }
-    
+
     a:visited {
-      color: @link-color;
+      color: $link-color;
     }
-    
-    a:hover { 
-      color: @highlight-color;
+
+    a:hover {
+      color: $highlight-color;
     }
-    
+
     a:active {
-      color: @highlight-color;
+      color: $highlight-color;
     }
-    
+
     #header {
       padding-bottom: 10px;
     }
-    
+
     #footer {
-      color: @theme-color;
+      color: $theme-color;
       padding-top: 12px;
       clear: both;
     }
 
     div#error {
-      background-color: @error-background-color;
-      color: @error-color;
+      background-color: $error-background-color;
+      color: $error-color;
     }
 
     div#notice {
-      background-color: @notice-background-color;
-      color: @notice-color;
+      background-color: $notice-background-color;
+      color: $notice-color;
     }
-    
+
     div.flash {
       margin-bottom: 5px;
       padding: 5px 10px;
     }
-        
+
     div.overflow {
       overflow: hidden;
     }
@@ -88,7 +88,7 @@ body {
         text-align: left;
         padding: 5px;
         margin: 5px;
-        border-bottom: 1px solid @table-border-color;
+        border-bottom: 1px solid $table-border-color;
       }
 
       td {
@@ -102,7 +102,7 @@ body {
       }
 
       h1 {
-        color: @input-color;
+        color: $input-color;
         margin: 0;
         padding: 0;
       }
@@ -121,13 +121,13 @@ body {
 
       input[type="text"] {
         width: 280px;
-        color: @input-color;
+        color: $input-color;
         display: block;
         font-size: 18px;
         box-shadow: none;
         border-radius: none;
         padding: 10px;
-        border: solid 1px @input-border-color;
+        border: solid 1px $input-border-color;
       }
 
       input[type="text"]:focus {
@@ -136,13 +136,13 @@ body {
 
       input[type="email"] {
         width: 280px;
-        color: @input-color;
+        color: $input-color;
         display: block;
         font-size: 18px;
         box-shadow: none;
         border-radius: none;
         padding: 10px;
-        border: solid 1px @input-border-color;
+        border: solid 1px $input-border-color;
       }
 
       input[type="email"]:focus {
@@ -151,13 +151,13 @@ body {
 
       input[type="password"] {
         width: 280px;
-        color: @input-color;
+        color: $input-color;
         display: block;
         font-size: 18px;
         box-shadow: none;
         border-radius: none;
         padding: 10px;
-        border: solid 1px @input-border-color;
+        border: solid 1px $input-border-color;
       }
 
       input[type="password"]:focus {
@@ -170,7 +170,7 @@ body {
         background-color: white;
         padding: 10px;
         margin: 1em auto;
-        border: solid 1px @input-border-color;
+        border: solid 1px $input-border-color;
         background-color: #EEE;
         font-size: 18px;
       }
@@ -181,13 +181,13 @@ body {
         background-color: #DDD;
         padding: 10px;
         margin: 1em auto;
-        border: solid 1px @input-border-color;
+        border: solid 1px $input-border-color;
         font-size: 18px;
       }
 
       input[type="submit"]:focus {
         outline: none;
       }
-    }   
+    }
   }
 }

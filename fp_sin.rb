@@ -17,10 +17,10 @@ require 'rack/session/cookie'
 require 'sinatra'
 require 'sinatra/flash'
 require 'tilt/haml'
-require 'tilt/less'
+require 'tilt/sass'
 require 'sinatra/activerecord'
 require 'sinatra/i18n'
-require 'less'
+require 'sass'
 require 'cache_proxy'
 require 'resolv'
 require 'em-resolv-replace' unless test?
@@ -63,7 +63,7 @@ class FpSinApp < Sinatra::Base
   get '/main.css' do
     cache_control :public, :must_revalidate, :max_age => (settings.cache_timeout * 10)
     set_content_type(:css)
-    less :main
+    scss :main
   end
     
   # Page not found handler

@@ -9,7 +9,7 @@ I added quite a few things.
 3. Basic login system included via sinatra-authentication.
 4. Simple localization with i18n.
 5. Added bundler and rvm support.
-6. Added less support.
+6. Added scss support.
 7. Dalli for speedy memcache support.
 8. Tux is included for console debugging.
 9. Convenient hashing functions for sha1, sha2 and md5.
