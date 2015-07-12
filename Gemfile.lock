@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/zquestz/sinatra-authentication
-  revision: ab540e087cc965f2b1f9cdd2a181871af56dddfd
+  revision: f2cce0d57a56b5a5127efb3914f176d7dae7dfa2
   branch: master
   specs:
     sinatra-authentication (0.4.2)

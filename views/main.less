@@ -12,6 +12,7 @@
 @link-color: #ED771A;
 @background-color: white;
 @text-color: black;
+@table-border-color: #DDD;
 
 * {
   font-family: 'Open Sans', sans-serif;
@@ -23,7 +24,7 @@ body {
 
   div#content {
     margin: auto;
-    width: 400px;
+    width: 500px;
     text-align: center;
         
     a:link {
@@ -82,6 +83,23 @@ body {
     #sinatra_authentication {
       margin: 1em auto;
       text-align: center;
+
+      th {
+        text-align: left;
+        padding: 5px;
+        margin: 5px;
+        border-bottom: 1px solid @table-border-color;
+      }
+
+      td {
+        text-align: left;
+        padding: 5px;
+      }
+
+      table {
+        margin: 1em auto;
+        width: 500px;
+      }
 
       h1 {
         color: @input-color;
