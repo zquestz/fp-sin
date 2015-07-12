@@ -1,0 +1,37 @@
+#sinatra_authentication
+  %h1
+    Edit
+    - if @user.id == current_user.id
+      Profile
+    - else
+      - if @user.email
+        = @user.email
+      - elsif @user.fb_uid
+        <fb:name uid=#{@user.fb_uid} linked='false' />
+      - else
+        N/A
+  %form{:action => "/users/#{@user.id}/edit", :method => "post"}
+    .field
+      .label
+        %label{:for => "user_email"} Email
+      %input{ :id => "user_email", :name => "user[email]", :type => "email", :value => @user.email, :tabindex => "1", :autofocus => true, :required => true }
+    .field
+      .label
+        %label{:for => "user_password"} New Password
+      %input{ :id => "user_password", :name => "user[password]", :type => "password", :tabindex => "2", :required => true }
+    .field
+      .label
+        %label{:for => "user_password_confirmation"} Confirm
+      %input{ :id => "user_password_confirmation", :name => "user[password_confirmation]", :type => "password", :tabindex => "3", :required => true }
+    -# don't render permission field if admin and editing yourself so you don't shoot yourself in the foot
+    - if current_user.admin? && current_user.id != @user.id
+      .field
+        .label
+          %label{:for => 'permission_level'}  Permission Level
+        %select{ :id => "permission_level", :name => "user[permission_level]" }
+          %option{:value => -1, :selected => @user.admin?}
+            Admin
+          %option{:value => 1, :selected => @user.permission_level == 1}
+            Authenticated User
+    .buttons
+      %input{ :value => "Update", :type => "submit", :tabindex => "4" }

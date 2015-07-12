@@ -3,6 +3,8 @@
 /* ###################################### */
 @theme-color: #E31A19;
 @highlight-color: #E38F19;
+@input-border-color: #DDD;
+@input-color: #555;
 @notice-background-color: #DDD;
 @notice-color: green;
 @error-background-color: #DDD;
@@ -11,6 +13,10 @@
 @background-color: white;
 @text-color: black;
 
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
 body {
   background-color: @background-color;
   color: @text-color;
@@ -18,7 +24,7 @@ body {
   div#content {
     margin: auto;
     width: 400px;
-    text-align:center;
+    text-align: center;
         
     a:link {
       text-decoration: none;
@@ -71,6 +77,99 @@ body {
       -webkit-border-radius: 5px;
       -khtml-border-radius: 5px;
       border-radius: 5px;
-    }    
+    }
+
+    #sinatra_authentication {
+      margin: 1em auto;
+      text-align: center;
+
+      h1 {
+        color: @input-color;
+        margin: 0;
+        padding: 0;
+      }
+
+      .field {
+        width: 300px;
+        margin: .8em auto;
+      }
+
+      .label {
+        width: 300px;
+        text-align: left;
+        padding-bottom: .3em;
+        margin: auto;
+      }
+
+      input[type="text"] {
+        width: 280px;
+        color: @input-color;
+        display: block;
+        font-size: 18px;
+        box-shadow: none;
+        border-radius: none;
+        padding: 10px;
+        border: solid 1px @input-border-color;
+      }
+
+      input[type="text"]:focus {
+        outline: none;
+      }
+
+      input[type="email"] {
+        width: 280px;
+        color: @input-color;
+        display: block;
+        font-size: 18px;
+        box-shadow: none;
+        border-radius: none;
+        padding: 10px;
+        border: solid 1px @input-border-color;
+      }
+
+      input[type="email"]:focus {
+        outline: none;
+      }
+
+      input[type="password"] {
+        width: 280px;
+        color: @input-color;
+        display: block;
+        font-size: 18px;
+        box-shadow: none;
+        border-radius: none;
+        padding: 10px;
+        border: solid 1px @input-border-color;
+      }
+
+      input[type="password"]:focus {
+        outline: none;
+      }
+
+      input[type="submit"] {
+        display: block;
+        width: 200px;
+        background-color: white;
+        padding: 10px;
+        margin: 1em auto;
+        border: solid 1px @input-border-color;
+        background-color: #EEE;
+        font-size: 18px;
+      }
+
+      input[type="submit"]:hover {
+        display: block;
+        width: 200px;
+        background-color: #DDD;
+        padding: 10px;
+        margin: 1em auto;
+        border: solid 1px @input-border-color;
+        font-size: 18px;
+      }
+
+      input[type="submit"]:focus {
+        outline: none;
+      }
+    }   
   }
 }

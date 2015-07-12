@@ -1,0 +1,13 @@
+#sinatra_authentication
+  %h1.page_title Login
+  %form{:action => "/login", :method => "post"}
+    .field
+      .label
+        %label{:for => "user_email'"} Email
+      %input{:id => "user_email", :name => "email", :type => "email", :tabindex => "1", :autofocus => true, :required => true}
+    .field
+      .label
+        %label{:for => "user_password"} Password
+      %input{:id => "user_password", :name => "password", :type => "password", :tabindex => "2", :required => true}
+    .buttons
+      %input{:value => "Login", :type => "submit", :tabindex => "3"}
