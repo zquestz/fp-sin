@@ -28,7 +28,7 @@ class FpSinApp < Sinatra::Base
                            :path => '/',
                            :expire_after => 2592000,
                            :secret => ENV['SESSION_SECRET'] || 'DEFAULT_SESSION_KEY',
-                           :old_secret => '3948309257384719814543645767'
+                           :old_secret => ENV['OLD_SESSION_SECRET'] || 'DEFAULT_OLD_SESSION_KEY'
 
   register Sinatra::I18n
   register Sinatra::ActiveRecordExtension
