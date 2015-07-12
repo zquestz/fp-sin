@@ -35,12 +35,18 @@ class TestFpSinApp < Minitest::Test
   def test_login
     get '/login'
     assert_equal 200, last_response.status
-    assert last_response.body.include?("Login")
+    assert last_response.body.include?(I18n.translate('login'))
   end
 
   def test_signup
     get '/signup'
     assert_equal 200, last_response.status
-    assert last_response.body.include?("Sign Up")
+    assert last_response.body.include?(I18n.translate('sign_up'))
+  end
+
+  # Users should be gated only for admin users.
+  def test_users
+    get '/users'
+    assert_equal 302, last_response.status
   end
 end
