@@ -94,6 +94,28 @@ class FpSinApp < Sinatra::Base
     def current_url
       @current_url ||= "#{request.env['rack.url_scheme']}://#{request.env['HTTP_HOST']}"
     end
+
+    # Render login bar. Taken from sinatra-authentication, but added I18n translations.
+    def render_login(html_attributes = {:class => ""})
+      css_classes = html_attributes.delete(:class)
+      parameters = ''
+      html_attributes.each_pair do |attribute, value|
+        parameters += "#{attribute}=\"#{value}\" "
+      end
+
+      result = "<div id='sinatra-authentication-login-logout'>"
+      if logged_in?
+        logout_parameters = html_attributes
+        logout_parameters.delete(:rel)
+        result += "<a href='/users/#{current_user.id}/edit' class='#{css_classes} sinatra-authentication-edit' #{parameters}>#{t('edit_profile')}</a> - "
+        result += "<a href='/logout' class='#{css_classes} sinatra-authentication-logout' #{logout_parameters}>#{t('logout')}</a>"
+      else
+        result += "<a href='/signup' class='#{css_classes} sinatra-authentication-signup' #{parameters}>#{t('sign_up')}</a> - "
+        result += "<a href='/login' class='#{css_classes} sinatra-authentication-login' #{parameters}>#{t('login')}</a>"
+      end
+
+      result += "</div>"
+    end
   end
 
 end

@@ -4,7 +4,7 @@
       = @user.email
     - elsif @user.fb_uid
       <fb:name uid=#{@user.fb_uid} linked='false' />
-  %p Joined: #{@user.created_at}
-  %p Admin: #{@user.admin?.to_s.upcase}
+  %p #{t('joined')} #{@user.created_at}
+  %p #{t('admin')} #{@user.admin?.to_s.upcase}
   - if current_user.admin?
-    %p Permission Level: #{@user.permission_level}
+    %p #{t('permission_level')} #{@user.permission_level}

@@ -31,4 +31,16 @@ class TestFpSinApp < Minitest::Test
     assert_equal 404, last_response.status
     assert last_response.body.include?(I18n.translate('http_not_found'))
   end
+
+  def test_login
+    get '/login'
+    assert_equal 200, last_response.status
+    assert last_response.body.include?("Login")
+  end
+
+  def test_signup
+    get '/signup'
+    assert_equal 200, last_response.status
+    assert last_response.body.include?("Sign Up")
+  end
 end

@@ -1,17 +1,18 @@
 #sinatra_authentication
-  %h1.page_title Sign Up
+  %h1.page_title 
+    =t('sign_up')
   %form{:action => "/signup", :method => "post"}
     .field
       .label
-        %label{:for => "user_email"} Email
+        %label{:for => "user_email"} #{t('email')}
       %input{ :id => "user_email", :name => "user[email]", :type => "email" , :value => params[:email], :tabindex => "1", :autofocus => true, :required => true }
     .field
       .label
-        %label{:for => "user_password"} Password
+        %label{:for => "user_password"} #{t('password')}
       %input{ :id => "user_password", :name => "user[password]", :type => "password", :tabindex => "2", :required => true }
     .field
       .label
-        %label{:for => "user_password_confirmation"} Confirm Password
+        %label{:for => "user_password_confirmation"} #{t('confirm_password')}
       %input{ :id => "user_password_confirmation", :name => "user[password_confirmation]", :type => "password", :tabindex => "3", :required => true }
     .buttons
-      %input{ :value => "Sign Up", :type => "submit", :tabindex => "4" }
+      %input{ :value => t('sign_up'), :type => "submit", :tabindex => "4" }

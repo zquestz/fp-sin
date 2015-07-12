@@ -7,8 +7,8 @@ GIT
 
 GIT
   remote: https://github.com/zquestz/sinatra-authentication
-  revision: 9beb4ac11aa4c2b3f5454ea2c8a9b5615ae354a4
-  branch: activerecord
+  revision: ab540e087cc965f2b1f9cdd2a181871af56dddfd
+  branch: master
   specs:
     sinatra-authentication (0.4.2)
       dm-core

@@ -1,5 +1,24 @@
 en:
-  app_name: fp-sin
-  source_url: http://github.com/zquestz/fp-sin
-  http_not_found: 404 - Page Not Found
-  http_error: 500 - An Error Has Occurred
+  app_name: "fp-sin"
+  source_url: "http://github.com/zquestz/fp-sin"
+  http_not_found: "404 - Page Not Found"
+  http_error: "500 - An Error Has Occurred"
+  sign_up: "Sign Up"
+  login: "Login"
+  email: "Email"
+  password: "Password"
+  confirm_password: "Confirm Password"
+  new_password: "New Password"
+  confirm: "Confirm"
+  joined: "Joined: "
+  admin: "Admin:"
+  permission_level: "Permission Level:"
+  users: "Users"
+  options: "Options"
+  edit: "Edit"
+  delete: "Delete"
+  show: "Show"
+  update: "Update"
+  profile: "Profile"
+  edit_profile: "Edit Profile"
+  logout: "Logout"
