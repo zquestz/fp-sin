@@ -81,7 +81,7 @@ class FpSinApp < Sinatra::Base
       css_classes = html_attributes.delete(:class)
       parameters = ''
       html_attributes.each_pair do |attribute, value|
-        parameters += "#{attribute}=\"#{value}\" "
+        parameters += %^#{attribute}="#{value}" ^
       end
 
       result = "<div id='sinatra-authentication-login-logout'>"
