@@ -4,3 +4,6 @@ cache/**/*
 config/database.yml
 coverage/**/*
 db/test.sqlite3
+bower_components
+node_modules
+build/

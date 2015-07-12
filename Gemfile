@@ -15,7 +15,6 @@ gem 'rack-fiber_pool'
 gem 'em-resolv-replace'
 gem 'mime-types'
 gem 'haml'
-gem 'sass'
 gem 'rack-test'
 gem 'minitest'
 gem 'simplecov', '>= 0.4.0', :require => false, :group => :test

@@ -3,7 +3,8 @@
   %head
     %title= t('app_name')
     %link(href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css')
-    %link(rel="stylesheet" type="text/css" href="/main.css")
+    %link(rel="stylesheet" type="text/css" href="#{url_for('/css/main.css')}")
+    %link(rel="stylesheet" type="text/css" href="#{url_for('/css/vendor.css')}")
     %link(rel="icon" type="image/png" href="/favicon.png")
   %body
     %div(id="content")

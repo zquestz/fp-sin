@@ -1,0 +1,122 @@
+/* ###################################### */
+/* Setup a few vars.                      */
+/* ###################################### */
+* {
+  font-family: 'Open Sans', sans-serif; }
+
+body {
+  background-color: white;
+  color: black; }
+  body div#content {
+    margin: auto;
+    width: 500px;
+    text-align: center; }
+    body div#content a:link {
+      text-decoration: none;
+      color: #ED771A; }
+    body div#content a:visited {
+      color: #ED771A; }
+    body div#content a:hover {
+      color: #E38F19; }
+    body div#content a:active {
+      color: #E38F19; }
+    body div#content #header {
+      padding-bottom: 10px; }
+    body div#content #footer {
+      color: #E31A19;
+      padding-top: 12px;
+      clear: both; }
+    body div#content div#error {
+      background-color: #DDD;
+      color: red; }
+    body div#content div#notice {
+      background-color: #DDD;
+      color: green; }
+    body div#content div.flash {
+      margin-bottom: 5px;
+      padding: 5px 10px; }
+    body div#content div.overflow {
+      overflow: hidden; }
+    body div#content .rounded {
+      -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -khtml-border-radius: 5px;
+      border-radius: 5px; }
+    body div#content #sinatra_authentication {
+      margin: 1em auto;
+      text-align: center; }
+      body div#content #sinatra_authentication th {
+        text-align: left;
+        padding: 5px;
+        margin: 5px;
+        border-bottom: 1px solid #DDD; }
+      body div#content #sinatra_authentication td {
+        text-align: left;
+        padding: 5px; }
+      body div#content #sinatra_authentication table {
+        margin: 1em auto;
+        width: 500px; }
+      body div#content #sinatra_authentication h1 {
+        color: #555;
+        margin: 0;
+        padding: 0; }
+      body div#content #sinatra_authentication .field {
+        width: 300px;
+        margin: .8em auto; }
+      body div#content #sinatra_authentication .label {
+        width: 300px;
+        text-align: left;
+        padding-bottom: .3em;
+        margin: auto; }
+      body div#content #sinatra_authentication input[type="text"] {
+        width: 280px;
+        color: #555;
+        display: block;
+        font-size: 18px;
+        box-shadow: none;
+        border-radius: none;
+        padding: 10px;
+        border: solid 1px #DDD; }
+      body div#content #sinatra_authentication input[type="text"]:focus {
+        outline: none; }
+      body div#content #sinatra_authentication input[type="email"] {
+        width: 280px;
+        color: #555;
+        display: block;
+        font-size: 18px;
+        box-shadow: none;
+        border-radius: none;
+        padding: 10px;
+        border: solid 1px #DDD; }
+      body div#content #sinatra_authentication input[type="email"]:focus {
+        outline: none; }
+      body div#content #sinatra_authentication input[type="password"] {
+        width: 280px;
+        color: #555;
+        display: block;
+        font-size: 18px;
+        box-shadow: none;
+        border-radius: none;
+        padding: 10px;
+        border: solid 1px #DDD; }
+      body div#content #sinatra_authentication input[type="password"]:focus {
+        outline: none; }
+      body div#content #sinatra_authentication input[type="submit"] {
+        display: block;
+        width: 200px;
+        background-color: white;
+        padding: 10px;
+        margin: 1em auto;
+        border: solid 1px #DDD;
+        background-color: #EEE;
+        font-size: 18px; }
+      body div#content #sinatra_authentication input[type="submit"]:hover {
+        display: block;
+        width: 200px;
+        background-color: #DDD;
+        padding: 10px;
+        margin: 1em auto;
+        border: solid 1px #DDD;
+        font-size: 18px; }
+      body div#content #sinatra_authentication input[type="submit"]:focus {
+        outline: none; }

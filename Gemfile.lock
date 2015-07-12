@@ -88,7 +88,6 @@ GEM
       rack-test (~> 0.6.2)
       ripl (>= 0.7.0)
     rufus-tokyo (1.0.7)
-    sass (3.4.16)
     simplecov (0.10.0)
       docile (~> 1.1.0)
       json (~> 1.8)
@@ -138,7 +137,6 @@ DEPENDENCIES
   rack-fiber_pool
   rack-test
   rake
-  sass
   simplecov (>= 0.4.0)
   sinatra
   sinatra-activerecord
