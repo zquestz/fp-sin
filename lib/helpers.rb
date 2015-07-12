@@ -40,9 +40,9 @@ module ApplicationHelpers
   end
 
   # TODO: move to ViewHelpers
-  # TODO: use manifest + settings instead
+  # TODO: use manifest/versioning
   def url_for(path)
-    if production?
+    if Sinatra::Application.production?
       path.gsub(/\.(css|js)$/, ".min.\\1")
     else
       path
