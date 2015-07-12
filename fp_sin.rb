@@ -10,7 +10,12 @@ raise LoadError, 'Ruby 1.9.2 required' if RUBY_VERSION < '1.9.2'
 # Add lib directory to load path
 $LOAD_PATH << File.join(File.dirname(__FILE__), 'lib')
 
+# Require 3rdparty deps
 require "dependencies"
+# Require our libs
+require 'cache_proxy'
+require 'hashify'
+require 'helpers'
 
 # Main application class.
 class FpSinApp < Sinatra::Base
@@ -35,18 +40,20 @@ class FpSinApp < Sinatra::Base
   register Sinatra::Flash
   register Sinatra::SinatraAuthentication
 
+  helpers ApplicationHelpers
+
   set :sinatra_authentication_view_path, "#{File.join(Pathname(__FILE__).dirname.expand_path, "views", "auth")}"
 
   get '/' do
     haml :index
   end
-  
+
   get '/main.css' do
     cache_control :public, :must_revalidate, :max_age => (settings.cache_timeout * 10)
     set_content_type(:css)
     scss :main
   end
-    
+
   # Page not found handler
   not_found do
     flash.now[:error] = t('http_not_found')
