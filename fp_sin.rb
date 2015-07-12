@@ -10,26 +10,7 @@ raise LoadError, 'Ruby 1.9.2 required' if RUBY_VERSION < '1.9.2'
 # Add lib directory to load path
 $LOAD_PATH << File.join(File.dirname(__FILE__), 'lib')
 
-# Require needed libs
-require 'fiber'
-require 'rack/fiber_pool'
-require 'rack/session/cookie'
-require 'sinatra'
-require 'sinatra/flash'
-require 'tilt/haml'
-require 'tilt/sass'
-require 'sinatra/activerecord'
-require 'sinatra/i18n'
-require 'sass'
-require 'cache_proxy'
-require 'resolv'
-require 'em-resolv-replace' unless test?
-require 'mime/types'
-require 'dalli'
-require 'hashify'
-require 'em-synchrony/em-http'
-require 'em-synchrony/activerecord'
-require 'sinatra-authentication'
+require "dependencies"
 
 # Main application class.
 class FpSinApp < Sinatra::Base
@@ -46,7 +27,7 @@ class FpSinApp < Sinatra::Base
                            #:domain => 'foo.com',
                            :path => '/',
                            :expire_after => 2592000,
-                           :secret => 'sdklfjklasdjfiowij547io45u9jslifj93',
+                           :secret => ENV['SESSION_SECRET'] || 'DEFAULT_SESSION_KEY',
                            :old_secret => '3948309257384719814543645767'
 
   register Sinatra::I18n
