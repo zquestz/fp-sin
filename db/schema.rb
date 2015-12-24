@@ -13,4 +13,16 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
+  create_table "ar_users", force: true do |t|
+    t.string   "email"
+    t.string   "hashed_password"
+    t.string   "salt"
+    t.integer  "permission_level"
+    t.string   "fb_uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ar_users", ["email"], name: "index_ar_users_on_email", unique: true, using: :btree
+
 end
