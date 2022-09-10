@@ -4,6 +4,9 @@
 # thin -R config.ru start
 # http://localhost:3000/
 
+# Shut up errors
+$VERBOSE = nil
+
 # Raise an error if we don't have a compatible ruby version.
 raise LoadError, 'Ruby 1.9.2 required' if RUBY_VERSION < '1.9.2'
 

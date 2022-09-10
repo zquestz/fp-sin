@@ -13,6 +13,8 @@ require 'rake/testtask'
 
 # Silence warnings
 ENV['RUBYOPT'] = "-W0 #{ENV['RUBYOPT']}"
+ENV['SINATRA_ACTIVESUPPORT_WARNING'] = "false"
+$VERBOSE = nil
 
 # Setup test rake task, and make it default
 Rake::TestTask.new(:test) do |test|
